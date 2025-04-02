@@ -12,4 +12,7 @@ struct dw_mstat
     } ram;
 };
 
+extern int dw_mstart(const dw_size_t, struct dw_mstat *);
+extern int dw_mstop(struct dw_mstat *);
+
 #endif

@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -xc
+    - -ansi
+    - -pedantic
+    - -Wall
+  Compiler: clang
