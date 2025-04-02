@@ -3,6 +3,6 @@
 
 #  include "int.h"
 
-extern const dw_addr_t DW_IDX_RC;
+extern const dw_addr_t DW_REC_IDX;
 
 #endif

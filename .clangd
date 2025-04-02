@@ -3,5 +3,4 @@ CompileFlags:
     - -xc
     - -ansi
     - -pedantic
-    - -Wall
   Compiler: clang
