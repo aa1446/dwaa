@@ -1,6 +1,8 @@
 #include "stat.h"
 
 #include "int.h"
+#include "opc.h"
+#include "rc.h"
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -11,6 +13,8 @@ int dw_mstart(const dw_size_t ram_size, struct dw_mstat *mstat) {
     for (i = 0; i < DW_RALENGTH; i += 1) {
         mstat->ra[i] = 0x0000000000000000;
     }
+
+    mstat->rps.idx = &mstat->ra[DW_IDX_RC];
 
     mstat->ram.size = ram_size;
     mstat->ram.data = (dw_mdat_t*) calloc(mstat->ram.size, sizeof(dw_mdat_t));
@@ -26,4 +30,12 @@ int dw_mstop(struct dw_mstat *mstat) {
 
         return 1;
     } else return 0;
+}
+
+void dw_mstep(struct dw_mstat *mstat) {
+    switch (mstat->ram.data[*mstat->rps.idx]) {
+        case DW_HLT_OPC: return;
+    }
+
+    *mstat->rps.idx += 1;
 }
