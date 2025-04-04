@@ -1,8 +1,6 @@
 #include "stat.h"
 
 #include "int.h"
-#include "opc.h"
-#include "rec.h"
 
 #include <stdint.h>
 #include <stdlib.h>

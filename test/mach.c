@@ -1,4 +1,4 @@
-#include "../mach/opc.h"
+#include "../mach/int.h"
 #include "../mach/stat.h"
 
 #include <assert.h>
